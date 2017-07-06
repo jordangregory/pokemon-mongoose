@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="styles.css" type="text/css">
+	<title>Pokemon</title>
+</head>
+
+<body class="cardBody">
+
+	<form class="pokemonForm" action="/addCard" method="post">
+
+
+		<div class="inputDivs">
+		<label for="name_input">Name of Pokemon:</label>
+			<input type="text" id="name_input" name="name" placeholder="Name of pokemon">
+			</div>
+
+		<div class="inputDivs">
+		<label for="type_input">Type of Pokemon:</label>
+			<input type="text" id="type_input" name="type" placeholder="fire, water, psychic, grass, etc.">
+			</div>
+
+		<div class="inputDivs">
+		<label for "month_input">Month of Release:</label>
+			<input type="text" id="month_input" name="month" placeholder="month">
+			</div>
+
+		<div class="inputDivs">
+		<label for="year_input">Year of Release:</label>
+			<input type="number" id="year_input" name="year" placeholder="year">
+			</div>
+
+		<div class="inputDivs"><label for="rare_input">Rare:</label>
+			<input type="radio" value ="Rare" id="rare_input" name="rarity">
+			</div>
+
+		<div class="inputDivs">
+		<label for="common_input">Common:</label>
+			<input type="radio" value ="Common" for="common_input" name="rarity">
+		</div>
+
+			<div class="inputDivs">
+			<button type="submit">Submit Card</button>
+			</div>
+
+
+	</form>
+
+</body>
+
+</html>

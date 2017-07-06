@@ -1,0 +1,71 @@
+html {
+  height: 100%;
+  width: 100%;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+}
+
+.cardBody {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  background-image: url("/pokeball-background.jpg");
+}
+.homeBody {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  background-image: url("/pokeball-background.jpg");
+}
+
+.finishedCard {
+  border: 5px solid #3d5bb4;
+  box-shadow: 5px 5px 5px #1b2c67;
+  background-color: #f7cd46;
+  border-radius: 5%;
+  height: 150px;
+  width: 300px;
+  padding: 5px 5px 30px 5px;
+  color: #3d5bb4;
+  padding: 25px;
+}
+
+.pokemonForm {
+  border: 5px solid #3d5bb4;
+  box-shadow: 5px 5px 5px #1b2c67;
+  background-color: #f7cd46;
+  border-radius: 5%;
+  display: inline-block;
+  height: 300px;
+}
+
+.pokemonForm label {
+  display: inline-block;
+  width: 5rem;
+}
+
+.pokemonForm input {
+  display: inline-block;
+  width: 15rem;
+}
+
+.inputDivs {
+  padding: 10px;
+}
+
+.addNewCard {
+  text-decoration: none;
+  color: #3d5bb4;
+  background-color: #f7cd46;
+  border: 2px solid #3d5bb4;
+  box-shadow: 5px 5px 5px #1b2c67;
+  padding: 15px;
+}
+
+.cardContainer {
+  margin-top: 75px;
+  display: flex;
+}
