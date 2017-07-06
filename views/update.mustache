@@ -5,13 +5,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="styles.css" type="text/css">
+	<link rel="stylesheet" href="/styles.css" type="text/css">
 	<title>Pokemon</title>
 </head>
 
 <body class="cardBody">
-
-	<form class="pokemonForm" action="/addCard" method="post">
+{{#singleCard}}
+	<form class="pokemonForm" action="/update/{{_id}}" method="post">
 
 
 		<div class="inputDivs">
@@ -35,7 +35,7 @@
 			</div>
 
 		<div class="inputDivs"><label for="rare_input">Rare:</label>
-			<input type="radio" value ="Rare" id="rare_input" name="rarity">
+			<input type="radio" value="Rare" id="rare_input" name="rarity">
 			</div>
 
 		<div class="inputDivs">
@@ -44,12 +44,12 @@
 		</div>
 
 			<div class="inputDivs">
-			<button type="submit">Submit Card</button>
+			<button type="submit" name="id">Update</button>
 			</div>
 
 
 	</form>
-
+{{/singleCard}}
 </body>
 
 </html>

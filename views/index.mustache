@@ -22,7 +22,15 @@
 			<div>Month of Release: {{releaseDate.month}}</div>
 			<div>Year of Release: {{releaseDate.year}}</div>
 			<div>Level of Rarity: {{rarity}}</div>
+			<form action="/delete" method="post">
+				<button type="submit" name="id" value={{_id}}>Delete</button>
+			</form>
+			<form action="/update/{{_id}}" method="get">
+				<button type="submit" name="id">Update</button>
+			</form>
 		</div>
+
+
 		{{/cards}}
 	</div>
 

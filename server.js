@@ -39,6 +39,35 @@ app.post("/addCard", function(req, res) {
   });
 });
 
+app.post("/delete", (req, res) => {
+  PokemonCard.deleteOne({ _id: req.body.id })
+    .then(() => {
+      res.redirect("/");
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    });
+});
+
+app.get("/update/:id", (req, res) => {
+  PokemonCard.findOne({ _id: req.params.id })
+    .then(foundPokemon => {
+      res.render("update", { singleCard: foundPokemon });
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    });
+});
+app.post("/update/:id", (req, res) => {
+  PokemonCard.updateOne({ _id: req.params.id }, req.body)
+    .then(foundPokemon => {
+      res.redirect("/");
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    });
+});
+
 mongoose
   .connect(dbURL)
   .then(() => {
