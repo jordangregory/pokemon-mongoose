@@ -22,31 +22,26 @@ app.get("/", function(req, res) {
   });
 });
 
-app.get("/addCard", function(req, res) {
-  res.render("addCard", {});
-});
-
 app.post("/addCard", function(req, res) {
   console.log(req.body);
   let newCard = new PokemonCard();
   newCard.name = req.body.name;
   newCard.type = req.body.type;
-  newCard.releaseDate.month = req.body.month;
-  newCard.releaseDate.year = Number(req.body.year);
+  // newCard.month = req.body.month;
+  // newCard.year = Number(req.body.year);
   newCard.rarity = req.body.rarity;
+  newCard.releaseDate = {
+    month: req.body.month,
+    year: Number(req.body.year)
+  };
+  console.log(newCard);
   newCard.save().then(savedCard => {
     res.redirect("/");
   });
 });
 
-app.post("/delete", (req, res) => {
-  PokemonCard.deleteOne({ _id: req.body.id })
-    .then(() => {
-      res.redirect("/");
-    })
-    .catch(err => {
-      res.status(500).send(err);
-    });
+app.get("/addCard", function(req, res) {
+  res.render("addCard", {});
 });
 
 app.get("/update/:id", (req, res) => {
@@ -61,6 +56,15 @@ app.get("/update/:id", (req, res) => {
 app.post("/update/:id", (req, res) => {
   PokemonCard.updateOne({ _id: req.params.id }, req.body)
     .then(foundPokemon => {
+      res.redirect("/");
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    });
+});
+app.post("/delete", (req, res) => {
+  PokemonCard.deleteOne({ _id: req.body.id })
+    .then(() => {
       res.redirect("/");
     })
     .catch(err => {
